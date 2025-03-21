@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(scales)
 
-# --- Martingale Simulation ---------------------------------------
+### Marginale Simulation
 
 simulate_martingale <- function(p_win, n_sim = 1000, max_investment = 1e6) {
   results <- numeric(n_sim)
@@ -28,7 +28,7 @@ simulate_martingale <- function(p_win, n_sim = 1000, max_investment = 1e6) {
   results
 }
 
-# --- UI ---------------------------------------------------------------
+### UI
 
 ui <- fluidPage(
   titlePanel("Martingale System Odds Calculator"),
@@ -60,7 +60,7 @@ ui <- fluidPage(
   )
 )
 
-# --- Server -----------------------------------------------------------
+### Server
 
 server <- function(input, output, session) {
   
@@ -121,7 +121,5 @@ server <- function(input, output, session) {
   })
   
 }
-
-# --- Run App ----------------------------------------------------------
 
 shinyApp(ui, server)
